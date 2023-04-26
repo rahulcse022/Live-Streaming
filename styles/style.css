@@ -28,11 +28,12 @@ input:focus {
     border-bottom: #0c9efd 2px solid;
 }
 #remote-container1 video {
-    height: auto;
+    /* height: 500px !important; */
+    /* height: auto; */
     position: relative !important;
 }
 #remote-container2 video {
-    height: auto;
+    /* height: auto; */
     position: relative !important;
 }
 #me {
@@ -45,15 +46,15 @@ input:focus {
     position: relative !important;
 }
 #remote-container-main {
-    display: flex;
+    /* display: flex; */
 }
 #remote-container1 {
-    flex: 1;
-    display: flex;
+    /* flex: 1; */
+    /* display: flex; */
 }
 #remote-container2 {
-    flex: 1;
-    display: flex;
+    /* flex: 1; */
+    /* display: flex; */
 }
 #error {
     color: red;
