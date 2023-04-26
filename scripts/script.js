@@ -10,6 +10,8 @@ document.getElementById("start1").onclick = async function () {
      if (channelId == null) {
           alert("channelId id not provided");
      }
+     document.getElementById("h_channel").innerHTML =
+          "Channel Id : " + channelId;
 
      // Defines a client for RTC using "live" profile for live-streaming
      const clientOne = AgoraRTC.createClient({ mode: "live", codec: "vp8" });
@@ -82,6 +84,9 @@ document.getElementById("start2").onclick = async function () {
      if (channelId2 == null) {
           alert("channelId2 id not provided");
      }
+
+     document.getElementById("a_channel").innerHTML =
+          "Channel Id : " + channelId2;
 
      // Defines a second client for joining channel two
      const clientTwo = AgoraRTC.createClient({ mode: "live", codec: "vp8" });
