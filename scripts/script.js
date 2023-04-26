@@ -1,5 +1,6 @@
 // Function to start the call for channel one
-document.getElementById("start1").onclick = async function () {
+// document.getElementById("start1").onclick = async function () {
+async function host() {
      // Fetch query parametrs
      const queryString = window.location.search;
      const urlParams = new URLSearchParams(queryString);
@@ -10,8 +11,8 @@ document.getElementById("start1").onclick = async function () {
      if (channelId == null) {
           alert("channelId id not provided");
      }
-     document.getElementById("h_channel").innerHTML =
-          "Channel Id : " + channelId;
+     //  document.getElementById("h_channel").innerHTML =
+     //       "Channel Id : " + channelId;
 
      // Defines a client for RTC using "live" profile for live-streaming
      const clientOne = AgoraRTC.createClient({ mode: "live", codec: "vp8" });
@@ -70,10 +71,11 @@ document.getElementById("start1").onclick = async function () {
      //  const paramValue = urlParams.get("channel");
      //  // Print parameter value to console
      //  console.log("q p from url : ", paramValue);
-};
+}
 
 // Function to start the call for channel two
-document.getElementById("start2").onclick = async function () {
+// document.getElementById("start2").onclick = async function () {
+async function audience() {
      // Fetch query parametrs
      const queryString = window.location.search;
      const urlParams = new URLSearchParams(queryString);
@@ -85,11 +87,14 @@ document.getElementById("start2").onclick = async function () {
           alert("channelId2 id not provided");
      }
 
-     document.getElementById("a_channel").innerHTML =
-          "Channel Id : " + channelId2;
+     //  document.getElementById("a_channel").innerHTML =
+     //       "Channel Id : " + channelId2;
 
      // Defines a second client for joining channel two
-     const clientTwo = AgoraRTC.createClient({ mode: "live", codec: "vp8" });
+     const clientTwo = AgoraRTC.createClient({
+          mode: "live",
+          codec: "vp8",
+     });
      // Set role as audience: in channel two we'll only receive remote feeds
      clientTwo.setClientRole("audience");
      let appId = "a3542ac837ce4f9e8e0456458e50d91d";
@@ -130,7 +135,7 @@ document.getElementById("start2").onclick = async function () {
      });
      // Join a channnel and retrieve the uid for local user
      const _uid2 = await clientTwo.join(appId, channelId2, token2, null);
-};
+}
 
 function initStopOne(client, localAudioTrack, localVideoTrack) {
      const stopBtn = document.getElementById("stop1");
