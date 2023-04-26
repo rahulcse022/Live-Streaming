@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Multi Channel Demo</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    
+    <p id='error'></p>
+    <div style="display:flex">
+        <div style="display: none;">
+    <button id="start1">Start</button>
+    <button id="stop1" disabled>Stop</button>
+        </div>
+        <div class="full">
+            
+            <div class="btn-container">
+                <button id="start2">Start</button>
+                <button id="stop2" disabled>Stop</button>
+            </div>
+        </div>
+    </div>
+    <div id="remote-container-main">
+            <div id="remote-container2"></div>
+    </div>
+    <script src="https://download.agora.io/sdk/release/AgoraRTC_N-4.3.0.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
